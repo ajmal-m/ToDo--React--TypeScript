@@ -16,6 +16,9 @@ export const Form = ({ text  , setText, setTodoList} :FormParams ) => {
     const handleSubmit = (e : React.FormEvent): void => {
         try {
           e.preventDefault();
+          if(!text.trim()){
+            return
+          }
           setTodoList((prev) => (
             [
               ...prev,
