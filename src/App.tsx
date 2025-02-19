@@ -1,8 +1,13 @@
 import { useState } from "react";
 
+type ListItem = {
+  id: string | number,
+  value: string
+}
+
 function App() {
   const [text , setText]= useState<string>("");
-  const [todoList, setTodoList] = useState<object[]>([]);
+  const [todoList, setTodoList] = useState<ListItem[]>([]);
 
   const handleSubmit = (e : React.FormEvent) => {
     try {
@@ -27,7 +32,7 @@ function App() {
 
   const deleteTodo = (key: string | number) => {
     try {
-      setTodoList((prev) => prev.filter((item) => item.id !== key));
+      setTodoList((prev) => prev.filter((item) => item?.id !== key));
     } catch (error) {
       console.error("Error deleting todo:", error);
     }
