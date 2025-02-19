@@ -11,6 +11,8 @@ type ListItem = {
     value: string
 }
 
+import { Button } from "./Button"
+
 export const Form = ({ text  , setText, setTodoList} :FormParams ) => {
 
     const handleSubmit = (e : React.FormEvent): void => {
@@ -49,7 +51,7 @@ export const Form = ({ text  , setText, setTodoList} :FormParams ) => {
                 name="todoText" 
                 id="todoText" 
             />
-            <button type="submit"  className="w-full bg-[#644dff] py-[4px] rounded">ADD</button>
+            <Button type="submit"  className="w-full bg-[#644dff] py-[4px] rounded" >ADD</Button>
         </form>
         </>
     )
